@@ -1,0 +1,11 @@
+def finiteDifference(x,y):
+    """takes two arrays, x and y, and returns the derivative of y with respect to x, dydx"""
+    dydx1 = zeros(y.shape,float)
+    dydx1[:-1] = diff(y)/diff(x)
+    dydx1[-1] = (y[-1] - y[-2])/(x[-1] - x[-2])
+    return dydx1
+
+def fourPtFiniteDiff(x,y):
+    h=x[1]-x[0]
+    dydx[2:-2] = (y[-2] - 8*y[-1] + 8*y[1] - y[2])/12*h
+    return dydx

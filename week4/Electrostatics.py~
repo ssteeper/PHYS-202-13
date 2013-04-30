@@ -11,4 +11,4 @@ def quadrupolePotential(x,y,q,d):
 
 def dipolePotential(x,y,q,d):
     """Computes potential at x,y in a dipole system with charges at +d and -d along the x axis"""
-    return pointPotential(x,y,q,0,-d) - pointPotential(x,y,q,0,d) 
+    return pointPotential(x,y,q,-d,0) - pointPotential(x,y,q,d,0) 
