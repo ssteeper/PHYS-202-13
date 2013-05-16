@@ -12,3 +12,9 @@ def quadrupolePotential(x,y,q,d):
 def dipolePotential(x,y,q,d):
     """Computes potential at x,y in a dipole system with charges at +d and -d along the x axis"""
     return pointPotential(x,y,q,0,-d) - pointPotential(x,y,q,0,d) 
+
+def pointField(x,y,q,Xq,Yq):
+    """Computes electric field components (Ex, Ey) for position (x,y) from a charge q at (Xq, Yq)."""
+    Ex = k*q(x-Xq) / (((x-Xq)**2.0+(y-Yq)**2.0)**(.5))
+    Ey = k*q(y-Yq) / (((x-Xq)**2.0+(y-Yq)**2.0)**(.5))
+    return (Ex, Ey)
